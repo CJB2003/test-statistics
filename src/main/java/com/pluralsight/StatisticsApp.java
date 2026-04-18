@@ -16,21 +16,47 @@ public class StatisticsApp {
             int randomScores = (int)(Math.random() * 31) + 70;
             testScores[i] = randomScores;
         }
-        //prints the array in array format
-        System.out.println(Arrays.toString(testScores));
+//        //Sorting the test scores lowest to highest
+//        Arrays.sort(testScores);
+        //prints the array in array format, some prints as well
+        System.out.println("\t -| Here are the test scores |-");
+        System.out.println("-----------------------------------------");
+        System.out.println(Arrays.toString(testScores) + "\n");
+
+
+        //initializing two variables, one for high and one for low score, set values to default
+        int highScore = testScores[0];
+        int lowScore = testScores[0];
+
+        for (int i = 0; i < testScores.length; i++) {
+
+            //If score at index of testScore is higher than variable highScore
+            //Replace it with that score
+            if (testScores[i] > highScore) {
+                highScore = testScores[i];
+            }
+            //vice versa for to get the lowest score
+            if (testScores[i] < lowScore) {
+                lowScore = testScores[i];
+            }
+        }
+        System.out.println("The highest score in the class is: " + highScore);
+        System.out.println("The lowest score in the class is: " + lowScore);
+
 
         //Initialized variables with default values to calculate total score and average score
         double sumScores = 0;
         double avgScores = 0;
 
-        //using for loop to iterate through the array and printing out all the values
+        //using enhanced for loop to iterate through the array and printing out all the values
         for (int testScore : testScores) {
-            System.out.println(testScore);
             sumScores += testScore;
             avgScores = sumScores / 10;
         }
-        System.out.println("Total: " + sumScores);
+        System.out.println("\nTotal: " + sumScores);
         System.out.println("The average score of the class is: " + avgScores);
+
+
     }
 
 }

@@ -23,7 +23,6 @@ public class StatisticsApp {
         System.out.println("-----------------------------------------");
         System.out.println(Arrays.toString(testScores) + "\n");
 
-
         //initializing two variables, one for high and one for low score, set values to default
         int highScore = testScores[0];
         int lowScore = testScores[0];
@@ -43,7 +42,6 @@ public class StatisticsApp {
         System.out.println("The highest score in the class is: " + highScore);
         System.out.println("The lowest score in the class is: " + lowScore);
 
-
         //Initialized variables with default values to calculate total score and average score
         double sumScores = 0;
         double avgScores = 0;
@@ -54,9 +52,16 @@ public class StatisticsApp {
             avgScores = sumScores / 10;
         }
         System.out.println("\nTotal: " + sumScores);
-        System.out.println("The average score of the class is: " + avgScores);
+        System.out.println("The average score of the class is: " + avgScores + "\n");
 
+        //So in order to find the median value, we first need to sort the array
+        Arrays.sort(testScores);
 
+        //After we've sorted our array, since this is an even numbered array of 10
+        //we'll get the two middle numbers which are 5 and 6 and find the average between them
+        //to get the median value
+        int medianValue = (testScores[4] + testScores[5]) / 2;
+        System.out.println("The median value of the test scores is: " + medianValue);
     }
 
 }

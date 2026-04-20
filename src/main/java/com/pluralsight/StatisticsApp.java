@@ -60,7 +60,7 @@ public class StatisticsApp {
         //After we've sorted our array, since this is an even numbered array of 10
         //we'll get the two middle numbers which are 5 and 6 and find the average between them
         //to get the median value
-        int medianValue = (testScores[4] + testScores[5]) / 2;
+        int medianValue = (testScores[5] + testScores[4]) / 2;
         System.out.println("The median value of the test scores is: " + medianValue);
     }
 
